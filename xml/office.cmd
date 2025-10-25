@@ -148,17 +148,17 @@ goto:part1
 ::Check if quickinstall mode - auto select apps
 if not "%quickmode%"=="1" goto:custommode
 echo.
-echo. (Cai dat nhanh: Word, Excel, PowerPoint, Outlook, OneDrive)
+echo. (Cai dat nhanh: Word, Excel, PowerPoint, Outlook, Teams)
 echo.
 set a=Word
 set b= + Excel
 set c= + PowerPoint
 set f= + Outlook
-set h= + OneDrive
+set i= + Teams
 >> "Configuration.xml" echo  ^<ExcludeApp ID="Access" /^>
 >> "Configuration.xml" echo  ^<ExcludeApp ID="Publisher" /^>
 >> "Configuration.xml" echo  ^<ExcludeApp ID="OneNote" /^>
->> "Configuration.xml" echo  ^<ExcludeApp ID="Teams" /^>
+>> "Configuration.xml" echo  ^<ExcludeApp ID="OneDrive" /^>
 goto:endoffice
 
 :custommode

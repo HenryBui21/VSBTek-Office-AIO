@@ -81,7 +81,7 @@ C2R.bat
 
 ### Cài đặt nhanh (Lựa chọn 0) ⚡
 Dành cho người dùng phổ thông:
-- Tự động cài: Word + Excel + PowerPoint + Outlook
+- Tự động cài: Word + Excel + PowerPoint + Outlook + Teams
 - Không hỏi thêm → Cài xong trong vài phút
 - Hỗ trợ: Office 2016/2019/2021/2024/365
 

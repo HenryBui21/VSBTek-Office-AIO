@@ -18,7 +18,7 @@ VSBTek Office AIO (All-In-One) Toolkit - Công cụ cài đặt và quản lý M
 - ✅ Support 8 versions: Office 2007, 2010, 2013, 2016, 2019, 2021, **2024**, 365
 - ✅ Choose 32-bit or 64-bit architecture
 - ✅ Select specific apps to install
-- ✅ Quick install mode (one-click for basic apps)
+- ✅ Quick install mode (Word, Excel, PowerPoint, Outlook, Teams)
 - ✅ Custom install mode (choose individual apps)
 
 #### **2. Project & Visio Installation (Menu 2)**
