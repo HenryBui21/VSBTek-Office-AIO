@@ -148,17 +148,17 @@ goto:part1
 ::Check if quickinstall mode - auto select apps
 if not "%quickmode%"=="1" goto:custommode
 echo.
-echo. (Cai dat nhanh: Word, Excel, PowerPoint, Outlook, Teams)
+echo. (Cai dat nhanh: Word, Excel, PowerPoint, Outlook, OneDrive)
 echo.
 set a=Word
 set b= + Excel
 set c= + PowerPoint
 set f= + Outlook
-set k= + Teams
+set h= + OneDrive
 >> "Configuration.xml" echo  ^<ExcludeApp ID="Access" /^>
 >> "Configuration.xml" echo  ^<ExcludeApp ID="Publisher" /^>
 >> "Configuration.xml" echo  ^<ExcludeApp ID="OneNote" /^>
->> "Configuration.xml" echo  ^<ExcludeApp ID="OneDrive" /^>
+>> "Configuration.xml" echo  ^<ExcludeApp ID="Teams" /^>
 goto:endoffice
 
 :custommode
@@ -249,7 +249,7 @@ echo.
 echo. 8/ Ban co muon cai OneDrive?
 Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
 if ERRORLEVEL 2 echo. == Khong ==&goto:lem8
-if ERRORLEVEL 1 echo. == Co ==&set k= + Teams&goto:part9
+if ERRORLEVEL 1 echo. == Co ==&set h= + OneDrive&goto:part9
 :lem8
 >> "Configuration.xml" echo  ^<ExcludeApp ID="OneDrive" /^> 
 
@@ -262,7 +262,7 @@ echo.
 echo. 9/ Ban co muon cai Microsoft Teams?
 Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
 if ERRORLEVEL 2 echo. == Khong ==&goto:lem9
-if ERRORLEVEL 1 echo. == Co ==&set k= + Teams&goto:endoffice
+if ERRORLEVEL 1 echo. == Co ==&set i= + Teams&goto:endoffice
 :lem9
 >> "Configuration.xml" echo  ^<ExcludeApp ID="Teams" /^> 
 
@@ -359,8 +359,8 @@ echo.
 echo.       ===========================================
 echo.        %yy%_%bb%_%xx%bit
 echo.       ===========================================
-echo. Bao gom: %a%%b%%c%%d%%e%
-echo.         %f%%g%%h%%i%%j%%k%
+echo. Bao gom: %a%%b%%c%%d%%e%%f%
+echo.         %g%%h%%i%
 echo.
 
 ::Notify if Office 2024
