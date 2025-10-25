@@ -80,7 +80,7 @@ choice /c:12345678 /n /m "Chon phien ban muon cai dat [1,2,3,4,5,6,7,8] : "
 if %errorlevel% EQU 1 set aa=2007&set yy=Office Professional Plus 2007&set quickinstall=0&goto:1
 if %errorlevel% EQU 2 set aa=2010&set yy=Office Professional Plus 2010&set quickinstall=0&goto:1
 if %errorlevel% EQU 3 set aa=2013&set yy=Office Professional Plus 2013&set quickinstall=0&goto:1
-if %errorlevel% EQU 4 set aa=ProPlus&set yy=Office Professional Plus 2016&set quickinstall=0&goto:1
+if %errorlevel% EQU 4 set aa=ProPlus&set yy=Office Professional Plus 2016&goto:quickselect
 if %errorlevel% EQU 5 set aa=ProPlus2019&set yy=Office Professional Plus 2019&goto:quickselect
 if %errorlevel% EQU 6 set aa=ProPlus2021&set yy=Office Professional Plus 2021&goto:quickselect
 if %errorlevel% EQU 7 set aa=ProPlus2024&set yy=Office Professional Plus 2024&goto:quickselect
@@ -132,7 +132,6 @@ set bb=Volume&goto:tiepdi
 if [%aa%] EQU [2007] goto:download
 if [%aa%] EQU [2010] goto:download
 if [%aa%] EQU [2013] goto:download
-if [%aa%] EQU [ProPlus] set aa=2016&goto:download
 if [%aa%] EQU [ProPlus2024] goto:display
 goto:display
 
