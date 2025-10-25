@@ -17,42 +17,55 @@
 
 ## 📦 Phiên Bản Office Hỗ Trợ
 
-<table>
-<tr>
-<td width="150"><b>Office 2007</b></td>
-<td>✅ 32/64-bit | ❌ Project/Visio | ✅ ISO Download</td>
-</tr>
-<tr>
-<td><b>Office 2010</b></td>
-<td>✅ 32/64-bit | ✅ Project/Visio | ✅ ISO Download</td>
-</tr>
-<tr>
-<td><b>Office 2013</b></td>
-<td>✅ 32/64-bit | ✅ Project/Visio | ✅ ISO Download</td>
-</tr>
-<tr>
-<td><b>Office 2016</b></td>
-<td>✅ 32/64-bit | ✅ Project/Visio | ✅ ISO Download</td>
-</tr>
-<tr>
-<td><b>Office 2019</b></td>
-<td>✅ 32/64-bit | ❌ Project/Visio | ✅ ISO Download</td>
-</tr>
-<tr>
-<td><b>Office 2021</b></td>
-<td>✅ 32/64-bit | ❌ Project/Visio | ✅ ISO Download</td>
-</tr>
-<tr>
-<td><b>Office 2024</b> ⭐</td>
-<td>✅ 32/64-bit | ❌ Project/Visio | ✅ ISO Download<br><i>🔸 Không có Publisher</i></td>
-</tr>
-<tr>
-<td><b>Office 365</b></td>
-<td>✅ 32/64-bit | ❌ Project/Visio | ✅ ISO Download<br><i>🔸 Cập nhật liên tục</i></td>
-</tr>
-</table>
+### 🔷 Office 2007 Pro Plus
+- **Kiến trúc:** 32-bit / 64-bit
+- **Ứng dụng:** Word, Excel, PowerPoint, Outlook, OneNote, Access, Publisher
+- **Project/Visio:** ❌ Không hỗ trợ
+- **ISO Download:** ✅ Có
 
-**Ứng dụng:** Word, Excel, PowerPoint, Outlook, OneNote, Access, Publisher (trừ 2024), Teams
+### 🔷 Office 2010 Pro Plus
+- **Kiến trúc:** 32-bit / 64-bit
+- **Ứng dụng:** Word, Excel, PowerPoint, Outlook, OneNote, Access, Publisher
+- **Project/Visio:** ✅ Hỗ trợ (2010 Pro)
+- **ISO Download:** ✅ Có
+
+### 🔷 Office 2013 Pro Plus
+- **Kiến trúc:** 32-bit / 64-bit
+- **Ứng dụng:** Word, Excel, PowerPoint, Outlook, OneNote, Access, Publisher
+- **Project/Visio:** ✅ Hỗ trợ (2013 Pro)
+- **ISO Download:** ✅ Có
+
+### 🔷 Office 2016 Pro Plus
+- **Kiến trúc:** 32-bit / 64-bit
+- **Ứng dụng:** Word, Excel, PowerPoint, Outlook, OneNote, Access, Publisher
+- **Project/Visio:** ✅ Hỗ trợ (2016 Pro)
+- **ISO Download:** ✅ Có
+
+### 🔷 Office 2019 Pro Plus
+- **Kiến trúc:** 32-bit / 64-bit
+- **Ứng dụng:** Word, Excel, PowerPoint, Outlook, OneNote, Access, Publisher, OneDrive
+- **Project/Visio:** ❌ Cài riêng (menu số 2)
+- **ISO Download:** ✅ Có
+
+### 🔷 Office 2021 Pro Plus
+- **Kiến trúc:** 32-bit / 64-bit
+- **Ứng dụng:** Word, Excel, PowerPoint, Outlook, OneNote, Access, Publisher, OneDrive
+- **Project/Visio:** ❌ Cài riêng (menu số 2)
+- **ISO Download:** ✅ Có
+
+### 🔷 Office 2024 Pro Plus ⭐ MỚI
+- **Kiến trúc:** 32-bit / 64-bit
+- **Ứng dụng:** Word, Excel, PowerPoint, Outlook, OneNote, Access, OneDrive
+- **⚠️ Lưu ý:** Publisher bị loại bỏ từ Office 2024
+- **Project/Visio:** ❌ Không hỗ trợ
+- **ISO Download:** ✅ Có
+
+### 🔷 Office 365 Pro Plus
+- **Kiến trúc:** 32-bit / 64-bit
+- **Ứng dụng:** Word, Excel, PowerPoint, Outlook, OneNote, Access, Publisher, OneDrive, Teams
+- **Đặc biệt:** Cập nhật liên tục, có thêm các ứng dụng cloud
+- **Project/Visio:** ❌ Cài riêng
+- **ISO Download:** ✅ Có
 
 ---
 
