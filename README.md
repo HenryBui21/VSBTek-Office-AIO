@@ -75,7 +75,7 @@ C2R.bat
 [ 1. Cai dat Office (Word, Excel...)    : Nhan so 1  ]
 [ 2. Cai dat Project - Visio            : Nhan so 2  ]
 [ 3. Xuat bieu tuong ra Desktop         : Nhan so 3  ]
-[ 4. Go cai Office tan goc              : Nhan so 4  ]
+[ 4. Go bo Office tan goc               : Nhan so 4  ]
 [ 5. Download file ISO Office           : Nhan so 5  ]
 ```
 
