@@ -359,8 +359,7 @@ echo.
 echo.       ===========================================
 echo.        %yy%_%bb%_%xx%bit
 echo.       ===========================================
-echo. Bao gom: %a%%b%%c%%d%%e%%f%
-echo.         %g%%h%%i%
+echo. Bao gom: %a%%b%%c%%d%%e%%f%%g%%h%%i%
 echo.
 
 ::Notify if Office 2024
