@@ -42,7 +42,7 @@ echo.      [  2. Cai dat Project - Visio            : Nhan so 2  ]
 echo.	  
 echo.      [  3. Xuat bieu tuong ra Desktop         : Nhan so 3  ]
 echo.
-echo.      [  4. Go cai Office tan goc              : Nhan so 4  ]
+echo.      [  4. Go bo Office tan goc               : Nhan so 4  ]
 echo.
 echo.      [  5. Download file ISO Office           : Nhan so 5  ]
 echo.	  
