@@ -197,7 +197,7 @@ for %%c in (%id1%,%id2%,%id3%,%id4%,%id5%,%id6%,%id7%,%id8%,%id9%,%id10%) do (fo
 cls
 echo.
 echo.
-if [%b1%] EQU [O365ProPlusRetail] echo.  Đang sử dụng:       Microsoft 365 Apps for enterprise&set ak47=365
+if [%b1%] EQU [O365ProPlusRetail] echo.  Đang sử dụng:     Microsoft 365 Apps for enterprise&set ak47=365
 if [%b1%] EQU [ProPlus2019Retail] echo.  Đang sử dụng:     Office Professional Plus 2019 (Retail)&set ak47=19
 if [%b1%] EQU [ProPlus2019Volume] echo.  Đang sử dụng:     Office Professional Plus 2019 (Volume)&set ak47=19
 if [%b1%] EQU [ProPlusRetail]     echo.  Đang sử dụng:     Office Professional Plus 2016 (Retail)&set ak47=16
