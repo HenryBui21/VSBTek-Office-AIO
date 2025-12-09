@@ -3,7 +3,7 @@ CHCP 65001 >nul 2>&1
 @echo off
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 if '%errorlevel%' NEQ '0' (
-    echo  Run CMD as Administrator...
+    echo  Chay CMD voi quyen Quan tri vien...
     goto goUAC 
 ) else (
  goto goADMIN )
@@ -20,11 +20,11 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
     
-::Cai dat Project-Visio
+::Cài đặt Project-Visio
 ::Version: 2.0
 ::Developer: Thanos
 
-title Cai dat Project-Visio cho may tinh!
+title Cài đặt Project-Visio cho máy tính!
 cls
 color f0
 mode con: cols=60 lines=27
@@ -49,13 +49,13 @@ set yy=
 :batdau
 >> "Configuration.xml" echo ^<Configuration^>
 
-echo. 
-echo.          Chon phien ban 32bit hoac 64bit
+echo.
+echo.          Chọn phiên bản 32bit hoặc 64bit
 echo.
 echo.
 echo.      (A): 32bit        ;         (B): 64bit
 echo.
-Choice /N /C AB /M "* Nhap Lua Chon Cua Ban [A hoac B] :
+Choice /N /C AB /M "* Nhập Lựa Chọn Của Bạn [A hoặc B] :
 if ERRORLEVEL 2 set xx=64
 if ERRORLEVEL 1 set xx=32
 >> "Configuration.xml" echo  ^<Add OfficeClientEdition="%xx%" ^>
@@ -65,17 +65,17 @@ echo.
 echo.
 :project
 echo. 1. Bạn có muốn cài Project Pro?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:visio
-if ERRORLEVEL 1 echo. == Co ==&set zz=ProjectPro&set vv=Project Professional
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:visio
+if ERRORLEVEL 1 echo. == Có ==&set zz=ProjectPro&set vv=Project Professional
 
 echo.
-echo.   (1): phien ban 2016
-echo.   (2): phien ban 2019
-echo.   (3): phien ban 2021
+echo.   (1): phiên bản 2016
+echo.   (2): phiên bản 2019
+echo.   (3): phiên bản 2021
 echo.
 echo.
-choice /c:123 /n /m "Nhap number cua phien ban muon cai dat [1,2,3] : "
+choice /c:123 /n /m "Nhập số của phiên bản muốn cài đặt [1,2,3] : "
 if %errorlevel% EQU 3 set pp=2021
 if %errorlevel% EQU 2 set pp=2019
 if %errorlevel% EQU 1 set pp=&set gg=2016_
@@ -96,17 +96,17 @@ set tt=Retail
 :visio
 echo.
 echo. 2. Bạn có muốn cài Visio Pro?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:end_all
-if ERRORLEVEL 1 echo. == Co ==&set mm=VisioPro&set nn=Visio Professional
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:end_all
+if ERRORLEVEL 1 echo. == Có ==&set mm=VisioPro&set nn=Visio Professional
 
 echo.
-echo.   (1): phien ban 2016
-echo.   (2): phien ban 2019
-echo.   (3): phien ban 2021
+echo.   (1): phiên bản 2016
+echo.   (2): phiên bản 2019
+echo.   (3): phiên bản 2021
 echo.
 echo.
-choice /c:123 /n /m "Nhap number cua phien ban muon cai dat [1,2,3] : "
+choice /c:123 /n /m "Nhập số của phiên bản muốn cài đặt [1,2,3] : "
 if %errorlevel% EQU 3 set cc=2021
 if %errorlevel% EQU 2 set cc=2019
 if %errorlevel% EQU 1 set cc=&set ff=2016_
@@ -167,17 +167,17 @@ echo.
 
 :endgame
 echo.
-echo.               === BAT DAU CAI DAT? ===
+echo.               === BẮT ĐẦU CÀI ĐẶT? ===
 echo.
-echo.             (Y): Yes     ;      (N): No
+echo.             (Y): Có     ;      (N): Không
 echo.
-Choice /N /C YN /M "* Nhap Lua Chon Cua Ban [Y hoac N] :
+Choice /N /C YN /M "* Nhập Lựa Chọn Của Bạn [Y hoặc N] :
 if ERRORLEVEL 2 del /s /f /q Configuration.xml&cls&goto:MainMenu
 if ERRORLEVEL 1 cls
 
 mode con: cols=50 lines=15
 echo.
-echo. Dang bat dau qua trinh cai dat Project/Visio....
+echo. Đang bắt đầu quá trình cài đặt Project/Visio....
 echo.
 setup.exe /configure Configuration.xml
 exit

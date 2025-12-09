@@ -2,7 +2,7 @@ CHCP 65001 >nul 2>&1
 @echo off
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 if '%errorlevel%' NEQ '0' (
-    echo  Run CMD as Administrator...
+    echo  Chay CMD voi quyen Quan tri vien...
     goto goUAC
 ) else (
  goto goADMIN )

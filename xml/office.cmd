@@ -3,7 +3,7 @@ CHCP 65001 >nul 2>&1
 @echo off
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 if '%errorlevel%' NEQ '0' (
-    echo  Run CMD as Administrator...
+    echo  Chay CMD voi quyen Quan tri vien...
     goto goUAC
 ) else (
  goto goADMIN )
@@ -297,7 +297,7 @@ echo.   (2): phiên bản 2019
 echo.   (3): phiên bản 2021
 echo.
 echo.
-choice /c:123 /n /m "Nhập number của phiên bản muốn cài đặt [1,2,3] : "
+choice /c:123 /n /m "Nhập số của phiên bản muốn cài đặt [1,2,3] : "
 if %errorlevel% EQU 3 set pp=2021
 if %errorlevel% EQU 2 set pp=2019
 if %errorlevel% EQU 1 set pp=&set gg=2016_
@@ -328,7 +328,7 @@ echo.   (2): phiên bản 2019
 echo.   (3): phiên bản 2021
 echo.
 echo.
-choice /c:123 /n /m "Nhập number của phiên bản muốn cài đặt [1,2,3] : "
+choice /c:123 /n /m "Nhập số của phiên bản muốn cài đặt [1,2,3] : "
 if %errorlevel% EQU 3 set cc=2021
 if %errorlevel% EQU 2 set cc=2019
 if %errorlevel% EQU 1 set cc=&set ff=2016_
@@ -383,7 +383,7 @@ echo.
 echo.
 echo.               === BẮT ĐẦU CÀI ĐẶT? ===
 echo.
-echo.             (Y): Yes     ;      (N): No
+echo.             (Y): Có     ;      (N): Không
 echo.
 Choice /N /C YN /M "* Nhập Lựa Chọn Của Bạn - [Y hoặc N] :
 if ERRORLEVEL 2 del /s /f /q Configuration.xml&cls&goto:startok

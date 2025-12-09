@@ -3,7 +3,7 @@ CHCP 65001 >nul 2>&1
 @echo off
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 if '%errorlevel%' NEQ '0' (
-    echo  Run CMD as Administrator...
+    echo  Chay CMD voi quyen Quan tri vien...
     goto goUAC 
 ) else (
  goto goADMIN )
@@ -22,10 +22,10 @@ if '%errorlevel%' NEQ '0' (
 	
 ::Version: 3.0
 ::Developer: Thanos
-::OS support [32+64bit]: Windows 7/8/8.1 (chi cai duoc Office 2010, 2013, 2016 Volume), Windows 10 (cai duoc moi ban), Windows 11 (cai duoc moi ban)
+::Hỗ trợ HĐH [32+64bit]: Windows 7/8/8.1 (chỉ cài được Office 2010, 2013, 2016 Volume), Windows 10 (cài được mọi bản), Windows 11 (cài được mọi bản)
 
 ====================================================================
-title Ho tro cac van de ve Office cho may tinh!
+title Hỗ trợ các vấn đề về Office cho máy tính!
 color f0
 
 
@@ -36,20 +36,20 @@ cls
 echo.
 echo.                          == MENU ==
 echo.      
-echo.      [  1. Cai dat Office (Word, Excel...)    : Nhan so 1  ] 
+echo.      [  1. Cài đặt Office (Word, Excel...)    : Nhấn số 1  ]
 echo.
-echo.      [  2. Cai dat Project - Visio            : Nhan so 2  ]
-echo.	  
-echo.      [  3. Xuat bieu tuong ra Desktop         : Nhan so 3  ]
+echo.      [  2. Cài đặt Project - Visio            : Nhấn số 2  ]
 echo.
-echo.      [  4. Go bo Office tan goc               : Nhan so 4  ]
+echo.      [  3. Xuất biểu tượng ra Desktop         : Nhấn số 3  ]
 echo.
-echo.      [  5. Download file ISO Office           : Nhan so 5  ]
+echo.      [  4. Gỡ bỏ Office tận gốc               : Nhấn số 4  ]
+echo.
+echo.      [  5. Tải xuống file ISO Office          : Nhấn số 5  ]
 echo.	  
 echo.        
 echo.
 @echo ===========================
-Choice /N /C 12345 /M "* Nhap lua chon cua ban: 
+Choice /N /C 12345 /M "* Nhập lựa chọn của bạn: 
 
 if ERRORLEVEL 5 goto:downloadISO
 if ERRORLEVEL 4 goto:uninstalloffice      
@@ -81,12 +81,12 @@ goto:MainMenu
 cls
 echo.
 echo. ========================================
-echo.   Dang xuat bieu tuong Office ra Desktop...
+echo.   Đang xuất biểu tượng Office ra Desktop...
 echo. ========================================
 echo.
 timeout /t 1 >nul
 
-REM Copy shortcuts from main Programs folder
+REM Sao chép biểu tượng từ thư mục Programs chính
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Word*.lnk" "%AllUsersProfile%\Desktop" 2>nul
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Excel*.lnk" "%AllUsersProfile%\Desktop" 2>nul
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\PowerPoint*.lnk" "%AllUsersProfile%\Desktop" 2>nul
@@ -97,7 +97,7 @@ COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Publisher*.lnk" "%
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visio*.lnk" "%AllUsersProfile%\Desktop" 2>nul
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Project*.lnk" "%AllUsersProfile%\Desktop" 2>nul
 
-REM Copy shortcuts from Microsoft Office folder (Office 2016+)
+REM Sao chép biểu tượng từ thư mục Microsoft Office (Office 2016+)
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office\Word*.lnk" "%AllUsersProfile%\Desktop" 2>nul
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office\Excel*.lnk" "%AllUsersProfile%\Desktop" 2>nul
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office\PowerPoint*.lnk" "%AllUsersProfile%\Desktop" 2>nul
@@ -108,15 +108,15 @@ COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office\P
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office\Visio*.lnk" "%AllUsersProfile%\Desktop" 2>nul
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office\Project*.lnk" "%AllUsersProfile%\Desktop" 2>nul
 
-REM Copy shortcuts from Office Tools folder
+REM Sao chép biểu tượng từ thư mục Office Tools
 COPY /Y "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office Tools\*.lnk" "%AllUsersProfile%\Desktop" 2>nul
 
 echo.
 echo. ========================================
-echo.   Da xuat bieu tuong Office ra Desktop!
+echo.   Đã xuất biểu tượng Office ra Desktop!
 echo. ========================================
 echo.
-echo. Nhan phim bat ky de quay lai menu...
+echo. Nhấn phím bất kỳ để quay lại menu...
 pause >nul
 goto:MainMenu
 
@@ -130,17 +130,17 @@ cls
 echo. 
 echo.                             == MENU ==
 echo.      
-echo.         [  1. OfficeScrubber (Recommended)     : Nhan so 1  ]
-echo.         
-echo.         [  2. Revo Uninstaller (Portable)      : Nhan so 2  ]
+echo.         [  1. OfficeScrubber (Khuyến nghị)     : Nhấn số 1  ]
+echo.
+echo.         [  2. Revo Uninstaller (Portable)      : Nhấn số 2  ]
 echo.
 echo.        ---------------------------------------------------
 echo.
-echo.                  [  3. Quay lai   : Nhan so 3  ]
+echo.                  [  3. Quay lại   : Nhấn số 3  ]
 echo.
 echo.
 @echo ===========================
-Choice /N /C 123 /M "* Nhap lua chon cua ban : 
+Choice /N /C 123 /M "* Nhập lựa chọn của bạn : 
 if ERRORLEVEL 3 goto:MainMenu
 if ERRORLEVEL 2 goto:off_revo
 if ERRORLEVEL 1 goto:off_scrubber
@@ -150,7 +150,7 @@ if ERRORLEVEL 1 goto:off_scrubber
 cls
 echo.
 echo.
-echo. OfficeScrubber dang khoi dong (che do tuong tac)...
+echo. OfficeScrubber đang khởi động (chế độ tương tác)...
 echo.
 start remove_office_tan_goc\OfficeScrubber\OfficeScrubber.cmd
 timeout 10
@@ -160,7 +160,7 @@ goto:uninstalloffice
 :off_revo
 cls
 echo.
-echo. Dang tai Revo Uninstaller Portable...
+echo. Đang tải Revo Uninstaller Portable...
 echo.
 start https://www.revouninstaller.com/start-freeware-download-portable/
 timeout 5
@@ -197,16 +197,16 @@ for %%c in (%id1%,%id2%,%id3%,%id4%,%id5%,%id6%,%id7%,%id8%,%id9%,%id10%) do (fo
 cls
 echo.
 echo.
-if [%b1%] EQU [O365ProPlusRetail] echo.  Dang su dung:       Microsoft 365 Apps for enterprise&set ak47=365
-if [%b1%] EQU [ProPlus2019Retail] echo.  Dang su dung:     Office Professional Plus 2019 (Retail)&set ak47=19
-if [%b1%] EQU [ProPlus2019Volume] echo.  Dang su dung:     Office Professional Plus 2019 (Volume)&set ak47=19
-if [%b1%] EQU [ProPlusRetail]     echo.  Dang su dung:     Office Professional Plus 2016 (Retail)&set ak47=16
-if [%b1%] EQU [Office16.PROPLUS]  echo.  Dang su dung:     Office Professional Plus 2016 (Volume)&set ak47=16
-if [%b1%] EQU [Office15.PROPLUSR] echo.  Dang su dung:     Office Professional Plus 2013 (Retail)
-if [%b1%] EQU [Office14.PROPLUSR] echo.  Dang su dung:     Office Professional Plus 2010 (Retail)
-if [%b1%] EQU [Office14.PROPLUS]  echo.  Dang su dung:     Office Professional Plus 2010 (Volume)
-if [%b1%] EQU [ProPlus2021Retail] echo.  Dang su dung:     Office Professional Plus 2021 (Retail)&set ak47=21
-if [%b1%] EQU [ProPlus2021Volume] echo.  Dang su dung:     Office LTSC Professional Plus 2021 (Volume)&set ak47=21
+if [%b1%] EQU [O365ProPlusRetail] echo.  Đang sử dụng:       Microsoft 365 Apps for enterprise&set ak47=365
+if [%b1%] EQU [ProPlus2019Retail] echo.  Đang sử dụng:     Office Professional Plus 2019 (Retail)&set ak47=19
+if [%b1%] EQU [ProPlus2019Volume] echo.  Đang sử dụng:     Office Professional Plus 2019 (Volume)&set ak47=19
+if [%b1%] EQU [ProPlusRetail]     echo.  Đang sử dụng:     Office Professional Plus 2016 (Retail)&set ak47=16
+if [%b1%] EQU [Office16.PROPLUS]  echo.  Đang sử dụng:     Office Professional Plus 2016 (Volume)&set ak47=16
+if [%b1%] EQU [Office15.PROPLUSR] echo.  Đang sử dụng:     Office Professional Plus 2013 (Retail)
+if [%b1%] EQU [Office14.PROPLUSR] echo.  Đang sử dụng:     Office Professional Plus 2010 (Retail)
+if [%b1%] EQU [Office14.PROPLUS]  echo.  Đang sử dụng:     Office Professional Plus 2010 (Volume)
+if [%b1%] EQU [ProPlus2021Retail] echo.  Đang sử dụng:     Office Professional Plus 2021 (Retail)&set ak47=21
+if [%b1%] EQU [ProPlus2021Volume] echo.  Đang sử dụng:     Office LTSC Professional Plus 2021 (Volume)&set ak47=21
 
 
 
@@ -215,25 +215,25 @@ set off21=""
 echo.
 echo.
 echo.      
-echo.      [  1. Retail sang Volume                      : Nhan so 1  ] 
+echo.      [  1. Retail sang Volume                      : Nhấn số 1  ]
 echo.
-echo.      [  2. Volume sang Retail                      : Nhan so 2  ]
+echo.      [  2. Volume sang Retail                      : Nhấn số 2  ]
 echo.
-echo.      [  3. ProPlus sang "Home and Student"         : Nhan so 3  ]
+echo.      [  3. ProPlus sang "Home and Student"         : Nhấn số 3  ]
 echo.
-echo.      [  4. ProPlus sang "Home and Bussiness"       : Nhan so 4  ]
+echo.      [  4. ProPlus sang "Home and Bussiness"       : Nhấn số 4  ]
 echo.
-echo.      [  5. "Student" or "Bussiness" sang Pro Plus  : Nhan so 5  ]
+echo.      [  5. "Student" or "Bussiness" sang Pro Plus  : Nhấn số 5  ]
 echo.
 echo.           -------------------------------------------
 echo.
-echo.               [  6.Quay lai: Nhan so 6  ]
+echo.               [  6. Quay lại: Nhấn số 6  ]
 echo.	  
 echo.	  
 echo.        
 echo.
 @echo ===========================
-Choice /N /C 123456 /M "* Nhap lua chon cua ban: 
+Choice /N /C 123456 /M "* Nhập lựa chọn của bạn: 
 
 if ERRORLEVEL 6 goto:orther    
 if ERRORLEVEL 5 set option=retail&goto:khoidau      
@@ -249,7 +249,7 @@ if ERRORLEVEL 1 set option=vl&goto:khoidau
 if [%ak47%] EQU [16] goto:office2016
 if [%ak47%] EQU [19] goto:office2019
 if [%ak47%] EQU [21] goto:office2021
-if [%ak47%] EQU [365] echo.&echo. Khong Duoc Phep Convert!!!&timeout 5&goto:menu_convert
+if [%ak47%] EQU [365] echo.&echo. Không Được Phép Convert!!!&timeout 5&goto:menu_convert
 
 
 :office2019
@@ -335,7 +335,7 @@ cscript ospp.vbs /inpkey:%key%
 cscript //nologo ospp.vbs /act
 echo.
 echo.=========================
-echo. Da convert thanh cong!
+echo. Đã convert thành công!
 echo.=========================
 echo.
 echo.
@@ -354,22 +354,22 @@ goto:menu_convert
 :downloadISO
 cls
 echo.
-echo.  ===  Lua chon phien ban Office ban muon tai xuong ===
+echo.  ===  Lựa chọn phiên bản Office bạn muốn tải xuống ===
 echo.
 echo.
-ECHO              1. Office 2019 Pro Plus 
+ECHO              1. Office 2019 Pro Plus
 ECHO              -----------------------
-ECHO              2. Office 2021 Pro Plus 
+ECHO              2. Office 2021 Pro Plus
 ECHO              -----------------------
-ECHO              3. Office 2024 Pro Plus 
+ECHO              3. Office 2024 Pro Plus
 ECHO              -----------------------
-ECHO              4. Office 365 Pro Plus 
+ECHO              4. Office 365 Pro Plus
 ECHO              -----------------------
-ECHO              5. Quay lai 
+ECHO              5. Quay lại
 echo.
 echo.
 echo. -----------------------
-choice /c:12345 /n /m "Chon phien ban muon tai xuong [1,2,3,4,5] : "
+choice /c:12345 /n /m "Chọn phiên bản muốn tải xuống [1,2,3,4,5] : "
 if %errorlevel% EQU 1 goto:2019_retail_3264bit
 if %errorlevel% EQU 2 goto:2021_retail_3264bit
 if %errorlevel% EQU 3 goto:2024_retail_3264bit
@@ -389,13 +389,13 @@ if %errorlevel% NEQ 5 goto:downloadISO
 cls
 echo.
 echo. ==================================================
-echo.   Dang mo trang tai Office 2019...
+echo.   Đang mở trang tải Office 2019...
 echo. ==================================================
 echo.
-echo. Huong dan: 
-echo. 1. Tai file ISO (format .img hoac .iso)
-echo. 2. Extract file ISO neu can thiet
-echo. 3. Chay setup.exe de cai dat Office
+echo. Hướng dẫn:
+echo. 1. Tải file ISO (format .img hoặc .iso)
+echo. 2. Extract file ISO nếu cần thiết
+echo. 3. Chạy setup.exe để cài đặt Office
 echo.
 start https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlus2019Retail.img
 timeout 3
@@ -405,13 +405,13 @@ goto:downloadISO
 cls
 echo.
 echo. ==================================================
-echo.   Dang mo trang tai Office 2021...
+echo.   Đang mở trang tải Office 2021...
 echo. ==================================================
 echo.
-echo. Huong dan: 
-echo. 1. Tai file ISO (format .img hoac .iso)
-echo. 2. Extract file ISO neu can thiet
-echo. 3. Chay setup.exe de cai dat Office
+echo. Hướng dẫn:
+echo. 1. Tải file ISO (format .img hoặc .iso)
+echo. 2. Extract file ISO nếu cần thiết
+echo. 3. Chạy setup.exe để cài đặt Office
 echo.
 start https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlus2021Retail.img
 timeout 3
@@ -421,13 +421,13 @@ goto:downloadISO
 cls
 echo.
 echo. ==================================================
-echo.   Dang mo trang tai Office 2024...
+echo.   Đang mở trang tải Office 2024...
 echo. ==================================================
 echo.
-echo. Huong dan: 
-echo. 1. Tai file ISO (format .img hoac .iso)
-echo. 2. Extract file ISO neu can thiet
-echo. 3. Chay setup.exe de cai dat Office
+echo. Hướng dẫn:
+echo. 1. Tải file ISO (format .img hoặc .iso)
+echo. 2. Extract file ISO nếu cần thiết
+echo. 3. Chạy setup.exe để cài đặt Office
 echo.
 start https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlus2024Retail.img
 timeout 3
@@ -437,13 +437,13 @@ goto:downloadISO
 cls
 echo.
 echo. ==================================================
-echo.   Dang mo trang tai Office 365...
+echo.   Đang mở trang tải Office 365...
 echo. ==================================================
 echo.
-echo. Huong dan: 
-echo. 1. Tai file ISO (format .img hoac .iso)
-echo. 2. Extract file ISO neu can thiet
-echo. 3. Chay setup.exe de cai dat Office
+echo. Hướng dẫn:
+echo. 1. Tải file ISO (format .img hoặc .iso)
+echo. 2. Extract file ISO nếu cần thiết
+echo. 3. Chạy setup.exe để cài đặt Office
 echo.
 start https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/O365ProPlusRetail.img
 timeout 3
@@ -456,7 +456,7 @@ goto:downloadISO
 
 :======================================================================================================================================================
 :Exit
-echo. Good Bye!
+echo. Tạm biệt!
 timeout 3
 exit
 
