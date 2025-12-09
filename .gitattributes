@@ -1,0 +1,17 @@
+# Set default line ending behavior to LF for all files
+* text=auto
+
+# Batch and CMD files should use CRLF line endings (Windows requirement)
+*.bat text eol=crlf working-tree-encoding=UTF-8
+*.cmd text eol=crlf working-tree-encoding=UTF-8
+
+# Markdown files should use UTF-8
+*.md text eol=crlf working-tree-encoding=UTF-8
+
+# Text files should use UTF-8
+*.txt text eol=crlf working-tree-encoding=UTF-8
+
+# Binary files should not be modified
+*.exe binary
+*.dll binary
+*.iso binary

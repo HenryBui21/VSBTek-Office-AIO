@@ -3,7 +3,7 @@ CHCP 65001 >nul 2>&1
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 if '%errorlevel%' NEQ '0' (
     echo  Run CMD as Administrator...
-    goto goUAC 
+    goto goUAC
 ) else (
  goto goADMIN )
 
@@ -18,7 +18,7 @@ if '%errorlevel%' NEQ '0' (
 :goADMIN
     pushd "%CD%"
     CD /D "%~dp0"
-	
+
 ========================
 color f0
 cls

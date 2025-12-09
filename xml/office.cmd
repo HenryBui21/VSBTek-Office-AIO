@@ -4,7 +4,7 @@ CHCP 65001 >nul 2>&1
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 if '%errorlevel%' NEQ '0' (
     echo  Run CMD as Administrator...
-    goto goUAC 
+    goto goUAC
 ) else (
  goto goADMIN )
 
@@ -20,15 +20,15 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 
-		
+
 
 ::Version: 2.0
 ::Developer: Thanos
-::OS support [32+64bit]: Windows 7/8/8.1 (chi cai duoc Office 2010, 2013, 2016 Volume), Windows 10 (cai duoc moi ban), Windows 11 (cai duoc moi ban)
+::OS support [32+64bit]: Windows 7/8/8.1 (chỉ cài được Office 2010, 2013, 2016 Volume), Windows 10 (cài được mọi bản), Windows 11 (cài được mọi bản)
 
 :========================================================================================================
 :MainMenu
-title Cai dat Word,Excel,Powerpoint... cho may tinh!
+title Cài đặt Word,Excel,Powerpoint... cho máy tính!
 color f0
 mode con: cols=58 lines=27
 
@@ -55,7 +55,7 @@ set yy=
 set quickmode=
 >> "Configuration.xml" echo ^<Configuration^>
 echo.
-echo. ===  Lua chon phien ban Office ban muon cai dat ===
+echo. ===  Lựa chọn phiên bản Office bạn muốn cài đặt ===
 echo.
 echo.
 ECHO              1. Office 2007 Pro Plus
@@ -66,17 +66,17 @@ ECHO              3. Office 2013 Pro Plus
 ECHO              -----------------------
 ECHO              4. Office 2016 Pro Plus
 ECHO              -----------------------
-ECHO              5. Office 2019 Pro Plus 
+ECHO              5. Office 2019 Pro Plus
 ECHO              -----------------------
-ECHO              6. Office 2021 Pro Plus 
+ECHO              6. Office 2021 Pro Plus
 ECHO              -----------------------
-ECHO              7. Office 2024 Pro Plus 
+ECHO              7. Office 2024 Pro Plus
 ECHO              -----------------------
-ECHO              8. Office 365 Pro Plus 
+ECHO              8. Office 365 Pro Plus
 echo.
 echo.
 echo. -----------------------
-choice /c:12345678 /n /m "Chon phien ban muon cai dat [1,2,3,4,5,6,7,8] : "
+choice /c:12345678 /n /m "Chọn phiên bản muốn cài đặt [1,2,3,4,5,6,7,8] : "
 if %errorlevel% EQU 1 set aa=2007&set yy=Office Professional Plus 2007&set quickinstall=0&goto:1
 if %errorlevel% EQU 2 set aa=2010&set yy=Office Professional Plus 2010&set quickinstall=0&goto:1
 if %errorlevel% EQU 3 set aa=2013&set yy=Office Professional Plus 2013&set quickinstall=0&goto:1
@@ -97,12 +97,12 @@ if %errorlevel% NEQ 8 goto:startok
 :quickselect
 cls
 echo.
-echo. ===  Lua chon che do cai dat ===
+echo. ===  Lựa chọn chế độ cài đặt ===
 echo.
-echo.      (A): Cai dat Nhanh (Word, Excel, PowerPoint,...)
-echo.      (B): Cai dat Tuy chinh (Chon tung ung dung)
+echo.      (A): Cài đặt Nhanh (Word, Excel, PowerPoint,...)
+echo.      (B): Cài đặt Tùy chỉnh (Chọn từng ứng dụng)
 echo.
-Choice /N /C AB /M "* Nhap lua chon cua ban [A hoac B] : "
+Choice /N /C AB /M "* Nhập lựa chọn của bạn [A hoặc B] : "
 if errorlevel 2 goto:custominstall
 if errorlevel 1 goto:quickinstall
 
@@ -118,7 +118,7 @@ goto:1
 echo.
 echo.      (A): 32bit     ;      (B): 64bit
 echo.
-choice /c AB /n /m "Nhap lua chon cua ban [A hoac B] : "
+choice /c AB /n /m "Nhập lựa chọn của bạn [A hoặc B] : "
 if errorlevel 2 set xx=64&set bb=Volume
 if errorlevel 1 set xx=32&set bb=Volume
 >> "Configuration.xml" echo  ^<Add OfficeClientEdition="%xx%" ^>
@@ -147,7 +147,7 @@ goto:part1
 ::Check if quickinstall mode - auto select apps
 if not "%quickmode%"=="1" goto:custommode
 echo.
-echo. (Cai dat nhanh: Word, Excel, PowerPoint, Outlook, Teams)
+echo. (Cài đặt nhanh: Word, Excel, PowerPoint, Outlook, Teams)
 echo.
 set a=Word
 set b= + Excel
@@ -164,43 +164,43 @@ goto:endoffice
 
 echo.
 echo.
-echo.    ___Lua chon phan mem ban muon "cai/khong cai"____
+echo.    ___Lựa chọn phần mềm bạn muốn "cài/không cài"____
 echo.
 echo.
 echo.
-echo. 1/ Ban co muon cai Word?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:lem1
-if ERRORLEVEL 1 echo. == Co ==&set a=Word&goto:part2
+echo. 1/ Bạn có muốn cài Word?
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:lem1
+if ERRORLEVEL 1 echo. == Có ==&set a=Word&goto:part2
 :lem1
->> "Configuration.xml" echo  ^<ExcludeApp ID="Word" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="Word" /^>
 
 :part2
-echo.   
-echo. 2/ Ban co muon cai Excel?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:lem2
-if ERRORLEVEL 1 echo. == Co ==&set b= + Excel&goto:part3
+echo.
+echo. 2/ Bạn có muốn cài Excel?
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:lem2
+if ERRORLEVEL 1 echo. == Có ==&set b= + Excel&goto:part3
 :lem2
->> "Configuration.xml" echo  ^<ExcludeApp ID="Excel" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="Excel" /^>
 
 :part3
 echo.
-echo. 3/ Ban co muon cai PowerPoint?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:lem3
-if ERRORLEVEL 1 echo. == Co ==&set c= + PowerPoint&goto:part4
+echo. 3/ Bạn có muốn cài PowerPoint?
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:lem3
+if ERRORLEVEL 1 echo. == Có ==&set c= + PowerPoint&goto:part4
 :lem3
->> "Configuration.xml" echo  ^<ExcludeApp ID="PowerPoint" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="PowerPoint" /^>
 
 :part4
 echo.
-echo. 4/ Ban co muon cai Access?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:lem4
-if ERRORLEVEL 1 echo. == Co ==&set d= + Access&goto:part5
+echo. 4/ Bạn có muốn cài Access?
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:lem4
+if ERRORLEVEL 1 echo. == Có ==&set d= + Access&goto:part5
 :lem4
->> "Configuration.xml" echo  ^<ExcludeApp ID="Access" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="Access" /^>
 
 
 ::Check if Office 2024 - skip Publisher question
@@ -208,49 +208,49 @@ if [%aa%] EQU [ProPlus2024] goto:skip_publisher
 
 :part5
 echo.
-echo. 5/ Ban co muon cai Publisher?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:lem5
-if ERRORLEVEL 1 echo. == Co ==&set e= + Publisher&goto:part6
+echo. 5/ Bạn có muốn cài Publisher?
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:lem5
+if ERRORLEVEL 1 echo. == Có ==&set e= + Publisher&goto:part6
 :lem5
->> "Configuration.xml" echo  ^<ExcludeApp ID="Publisher" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="Publisher" /^>
 goto:part6
 
 :skip_publisher
 echo.
-echo. (Publisher khong co trong Office 2024 Pro Plus)
+echo. (Publisher không có trong Office 2024 Pro Plus)
 >> "Configuration.xml" echo  ^<ExcludeApp ID="Publisher" /^>
 
 
 :part6
 echo.
-echo. 6/ Ban co muon cai Outlook?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:lem6
-if ERRORLEVEL 1 echo. == Co ==&set f= + Outlook&goto:part7
+echo. 6/ Bạn có muốn cài Outlook?
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:lem6
+if ERRORLEVEL 1 echo. == Có ==&set f= + Outlook&goto:part7
 :lem6
->> "Configuration.xml" echo  ^<ExcludeApp ID="Outlook" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="Outlook" /^>
 
 
 :part7
 echo.
-echo. 7/ Ban co muon cai OneNote?
-Choice /N /C YN /M "* Y:Co , B:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:lem7
-if ERRORLEVEL 1 echo. == Co ==&set g= + OneNote&goto:part8
+echo. 7/ Bạn có muốn cài OneNote?
+Choice /N /C YN /M "* Y:Có , B:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:lem7
+if ERRORLEVEL 1 echo. == Có ==&set g= + OneNote&goto:part8
 :lem7
->> "Configuration.xml" echo  ^<ExcludeApp ID="OneNote" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="OneNote" /^>
 
 
 
 :part8
 echo.
-echo. 8/ Ban co muon cai OneDrive?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:lem8
-if ERRORLEVEL 1 echo. == Co ==&set h= + OneDrive&goto:part9
+echo. 8/ Bạn có muốn cài OneDrive?
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:lem8
+if ERRORLEVEL 1 echo. == Có ==&set h= + OneDrive&goto:part9
 :lem8
->> "Configuration.xml" echo  ^<ExcludeApp ID="OneDrive" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="OneDrive" /^>
 
 
 :part9
@@ -258,17 +258,17 @@ if [%off365%] EQU [ok] goto:tieptuc
 if [%off365%] NEQ [ok] goto:endoffice
 :tieptuc
 echo.
-echo. 9/ Ban co muon cai Microsoft Teams?
-Choice /N /C YN /M "* Y:Co , N:Khong - [Y hoac N] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:lem9
-if ERRORLEVEL 1 echo. == Co ==&set i= + Teams&goto:endoffice
+echo. 9/ Bạn có muốn cài Microsoft Teams?
+Choice /N /C YN /M "* Y:Có , N:Không - [Y hoặc N] :
+if ERRORLEVEL 2 echo. == Không ==&goto:lem9
+if ERRORLEVEL 1 echo. == Có ==&set i= + Teams&goto:endoffice
 :lem9
->> "Configuration.xml" echo  ^<ExcludeApp ID="Teams" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="Teams" /^>
 
 
 :endoffice
->> "Configuration.xml" echo  ^<ExcludeApp ID="Groove" /^> 
->> "Configuration.xml" echo  ^<ExcludeApp ID="Lync" /^> 
+>> "Configuration.xml" echo  ^<ExcludeApp ID="Groove" /^>
+>> "Configuration.xml" echo  ^<ExcludeApp ID="Lync" /^>
 >> "Configuration.xml" echo  ^</Product^>
 
 ::Check if Office 2019, 2021 or 365 - skip Project/Visio
@@ -286,18 +286,18 @@ echo.               Project - Visio
 echo.      ==================================
 echo.
 echo.
-echo. 10/ Ban co muon cai Project Pro?
-Choice /N /C AB /M "* A:Co , B:Khong - [A hoac B] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:part13
-if ERRORLEVEL 1 echo. == Co ==&set zz=ProjectPro&set vv=Project Professional
+echo. 10/ Bạn có muốn cài Project Pro?
+Choice /N /C AB /M "* A:Có , B:Không - [A hoặc B] :
+if ERRORLEVEL 2 echo. == Không ==&goto:part13
+if ERRORLEVEL 1 echo. == Có ==&set zz=ProjectPro&set vv=Project Professional
 
 echo.
-echo.   (1): phien ban 2016
-echo.   (2): phien ban 2019
-echo.   (3): phien ban 2021
+echo.   (1): phiên bản 2016
+echo.   (2): phiên bản 2019
+echo.   (3): phiên bản 2021
 echo.
 echo.
-choice /c:123 /n /m "Nhap number cua phien ban muon cai dat [1,2,3] : "
+choice /c:123 /n /m "Nhập number của phiên bản muốn cài đặt [1,2,3] : "
 if %errorlevel% EQU 3 set pp=2021
 if %errorlevel% EQU 2 set pp=2019
 if %errorlevel% EQU 1 set pp=&set gg=2016_
@@ -317,18 +317,18 @@ set tt=Retail
 
 :part13
 echo.
-echo. 11/ Ban co muon cai Visio Pro?
-Choice /N /C AB /M "* A:Co , B:Khong - [A hoac B] :
-if ERRORLEVEL 2 echo. == Khong ==&goto:end_all
-if ERRORLEVEL 1 echo. == Co ==&set mm=VisioPro&set nn=Visio Professional
+echo. 11/ Bạn có muốn cài Visio Pro?
+Choice /N /C AB /M "* A:Có , B:Không - [A hoặc B] :
+if ERRORLEVEL 2 echo. == Không ==&goto:end_all
+if ERRORLEVEL 1 echo. == Có ==&set mm=VisioPro&set nn=Visio Professional
 
 echo.
-echo.   (1): phien ban 2016
-echo.   (2): phien ban 2019
-echo.   (3): phien ban 2021
+echo.   (1): phiên bản 2016
+echo.   (2): phiên bản 2019
+echo.   (3): phiên bản 2021
 echo.
 echo.
-choice /c:123 /n /m "Nhap number cua phien ban muon cai dat [1,2,3] : "
+choice /c:123 /n /m "Nhập number của phiên bản muốn cài đặt [1,2,3] : "
 if %errorlevel% EQU 3 set cc=2021
 if %errorlevel% EQU 2 set cc=2019
 if %errorlevel% EQU 1 set cc=&set ff=2016_
@@ -358,12 +358,12 @@ echo.
 echo.       ===========================================
 echo.        %yy%_%bb%_%xx%bit
 echo.       ===========================================
-echo. Bao gom: %a%%b%%c%%d%%e%%f%%g%%h%%i%
+echo. Bao gồm: %a%%b%%c%%d%%e%%f%%g%%h%%i%
 echo.
 
 ::Notify if Office 2024
 if [%aa%] EQU [ProPlus2024] (
-echo. Luu y: Publisher khong co trong Office 2024 Pro Plus
+echo. Lưu ý: Publisher không có trong Office 2024 Pro Plus
 echo.
 )
 echo.
@@ -381,17 +381,17 @@ echo.
 echo.
 :buocnhay2
 echo.
-echo.               === BAT DAU CAI DAT? ===
+echo.               === BẮT ĐẦU CÀI ĐẶT? ===
 echo.
 echo.             (Y): Yes     ;      (N): No
 echo.
-Choice /N /C YN /M "* Nhap Lua Chon Cua Ban - [Y hoac N] :
+Choice /N /C YN /M "* Nhập Lựa Chọn Của Bạn - [Y hoặc N] :
 if ERRORLEVEL 2 del /s /f /q Configuration.xml&cls&goto:startok
 if ERRORLEVEL 1 cls
 
 mode con: cols=50 lines=15
 echo.
-echo. Dang bat dau qua trinh cai dat Office....
+echo. Đang bắt đầu quá trình cài đặt Office....
 echo.
 setup.exe /configure Configuration.xml
 exit
@@ -399,7 +399,7 @@ exit
 :download
 mode con: cols=62 lines=20
 if [%aa%] EQU [2007] goto:2007
-if [%aa%] EQU [2010] goto:2010 
+if [%aa%] EQU [2010] goto:2010
 if [%aa%] EQU [2013] goto:2013
 if [%aa%] EQU [2016] goto:2016ne
 
@@ -444,7 +444,7 @@ echo.
 echo.
 echo.        === %yy%_%bb%_%xx%bit ===
 echo.
-echo. Nhan phim bat ky de quay lai MENU...
+echo. Nhấn phím bất kỳ để quay lại MENU...
 pause >nul
 start Office.cmd
 exit
