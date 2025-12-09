@@ -356,7 +356,7 @@ cls
 echo.
 echo.
 echo.       ===========================================
-echo.                            %yy%_%bb%_%xx%bit
+echo.         %yy%_%bb%_%xx%bit
 echo.       ===========================================
 echo. Bao gồm: %a%%b%%c%%d%%e%%f%%g%%h%%i%
 echo.
